@@ -1,3 +1,26 @@
 1-Instalar node, git y browser-sync -g
 2-En la carpeta de este repositorio:
     >browser-sync start --server --directory --files "**/*"
+3-Lo que hace a una aplicación compleja es la baja cohesión y gran emparejamiento.
+    Se necesita alta cohesión (si la función es de cálculo, que solo haga cálculo) y
+    poco emparejamiento (que el cambio en un componente no afecta a otro)
+4-Model-View-ViewModel:
+    
+    Model (Data/Business logic)-> holds raw data, may be displayed in the view, can contain
+    http/ajax call to retrieve data, contains no logic with displaying the model
+
+    View (UI Presentation)-> It displays the data, never changes it, declaratively broadcasts events, but
+    never handles them
+
+    ViewModel (Presentation logic)-> Representation of the state of the view, holds the data that's displayed
+    in the view, responds to view events aka presentation logic, calls other func for business
+    logic processing, never directly asks the view to display anything. (Like the state)
+
+    Declarative binder (Glue)-> Declaratively binds the model of the ViewModel to the View, this is
+    the key enabler of the MVVM patters, the framework glues it for you
+
+    View(html,css)      ViewModel(js)       Model(js)
+
+5-
+
+
